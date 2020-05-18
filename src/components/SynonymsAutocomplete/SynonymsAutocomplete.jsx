@@ -13,12 +13,19 @@ const SynonymsAutocompleteProvider = ({children}) => {
 
     const getSynonyms = async (value) => {
         setLoading(true)
-        const newSynonyms = await Api.get('/', {params: {rel_syn: value}});
-        (!helpers.isNil(newSynonyms) && !!newSynonyms.length) && setData({
-            list: newSynonyms,
-            counter: newSynonyms.length
-        })
-        setLoading(false)
+        try {
+            const newSynonyms = await Api.get('/', {params: {rel_syn: value}});
+            (!helpers.isNil(newSynonyms) && !!newSynonyms.length) && setData({
+                list: newSynonyms,
+                counter: newSynonyms.length
+            })
+        } catch (e) {
+            console.log(e)
+        } finally {
+            setLoading(false)
+
+        }
+
     }
 
     return (
