@@ -1,0 +1,26 @@
+#control-panel {
+    background-color: #fff;
+    min-height: 25px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 15px 0;
+}
+
+#format-actions {
+    display: flex;
+    align-items: stretch;
+}
+
+.format-action {
+    margin: 0 10px;
+    border: 0;
+    padding: 10px;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+
+.format-action:hover {
+    background-color: rgba(74, 74, 74, 1);
+    color: rgba(255, 255, 255, 1);
+}
