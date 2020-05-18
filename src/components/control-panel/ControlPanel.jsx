@@ -10,8 +10,6 @@ class ControlPanel extends Component {
         return (
             <div id="control-panel">
                 <div id="format-actions">
-                    <button onClick={this.handleAction} className="format-action" type="button" data-action="increaseFontSize">
-                        F+</button>
                     <button onClick={this.handleAction} className="format-action" type="button" data-action="bold">
                         <strong>B</strong></button>
                     <button onClick={this.handleAction} className="format-action" type="button" data-action="italic">
