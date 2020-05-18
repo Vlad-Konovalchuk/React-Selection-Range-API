@@ -7,7 +7,9 @@ const ToolTip = ({styles, counter = 0, handleModalOpen = () => ({})}) => {
             style={styles}
         >
             This word has {counter} synonyms.
+{/*
             <span onClick={handleModalOpen}>Show more...</span>
+*/}
         </div>
     );
 };

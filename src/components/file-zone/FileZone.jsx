@@ -47,12 +47,6 @@ const FileZone = () => {
                     />
                 )
             }
-            <ModalComponent
-                modalIsOpen={isModalOpen}
-                closeModal={toggleModal}
-            >
-                <p>{selectionValue && selectionValue.value}</p>
-            </ModalComponent>
         </div>
     );
 
