@@ -1,4 +1,4 @@
-#file-zone {
+.editor {
     background-color:#f1f0f0;
     flex-grow: 1;
     display: flex;
@@ -7,8 +7,9 @@
     padding: 5px;
 }
 
-#file {
+.editor__content {
     width: 600px;
+    padding: 16px;
     flex-grow: 1;
     background-color: #fff;
     border: 1px solid #e4dede;
