@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import './ControlPanel.css';
+import editorActions from "../../constants/editorActions";
 
 class ControlPanel extends Component {
     handleAction = (event) => {
@@ -10,30 +11,17 @@ class ControlPanel extends Component {
         return (
             <div id="control-panel">
                 <div id="format-actions">
-                    <button onClick={this.handleAction} className="format-action" type="button" data-action="bold">
-                        <strong>B</strong></button>
-                    <button onClick={this.handleAction} className="format-action" type="button" data-action="italic">
-                        <i>I</i></button>
-                    <button onClick={this.handleAction} className="format-action" type="button" data-action="underline">
-                        <u>U</u></button>
-                    <button onClick={this.handleAction} className="format-action" type="button"
-                            data-action="justifyleft">Left
-                    </button>
-                    <button onClick={this.handleAction} className="format-action" type="button"
-                            data-action="justifycenter">Left
-                    </button>
-                    <button onClick={this.handleAction} className="format-action" type="button"
-                            data-action="strike">
-                        <del>S</del>
-                    </button>
-                    <button onClick={this.handleAction} className="format-action" type="button"
-                            data-action="superscript">
-                        X<sup>2</sup>
-                    </button>
-                    <button onClick={this.handleAction} className="format-action" type="button"
-                            data-action="subscript">
-                        X<sub>2</sub>
-                    </button>
+                    {editorActions.map(action => (
+                        <button key={action}
+                                onClick={this.handleAction}
+                                className="format-action"
+                                type="button"
+                                data-action={action.action}
+                                title={action.action}
+                        >
+                            {action.title}
+                        </button>
+                    ))}
                 </div>
             </div>
         );
